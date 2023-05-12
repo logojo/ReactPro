@@ -1,4 +1,4 @@
-import  { ProductCardCompound  } from './ProductCardCompound'
+import  { ProductCardCompound as ProductCard  } from './ProductCardCompound'
 
 import { ProductTitle } from './ProductTitle'
 import { ProductImage } from './ProductImage'
@@ -13,10 +13,10 @@ export { ProductCardTraditional } from './ProductCardTraditional'
 
 
 // Se agrego los componentes hijos como propiedades del padre
-export const ProductCard : ProductCardProps =  Object.assign( ProductCardCompound, {
+export const ProductCardCompound : ProductCardProps =  Object.assign( ProductCard, {
     Title: ProductTitle,
     Image: ProductImage,
     Buttons: ProductButtons
 })
 
-export default ProductCard
+export default ProductCardCompound
