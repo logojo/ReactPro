@@ -1,6 +1,5 @@
-import React from 'react'
-import { ProductCard, ProductImage, ProductTitle, ProductButtons } from '../components'
-
+import { ProductCardCompound, ProductImage, ProductTitle, ProductButtons } from '../components';
+import '../assets/styles/custom-styles.css';
 
 const product = {
  id: '1',
@@ -28,17 +27,40 @@ export const Shopping = () => {
               tal como se hizo hasta el final del ProductCardCompound
             */}
             
-            <ProductCard product={ product }>
-              <ProductCard.Image />      
-              <ProductCard.Title title={'Titulo enviado'}/>
-              <ProductCard.Buttons />              
-            </ProductCard>
+            <ProductCardCompound product={ product } className="bg-dark color-bg-dark">
+              <ProductCardCompound.Image className="custom-image"/>      
+              <ProductCardCompound.Title title={'Titulo enviado'} className="fz-bg-dark"/>
+              <ProductCardCompound.Buttons className="custom-button-bg-dark"/>              
+            </ProductCardCompound>
+            
 
-            <ProductCard product={ product }>
-              <ProductImage />      
-              <ProductTitle />
-              <ProductButtons />              
-            </ProductCard>
+
+             {/* 
+              Agregando clases personalizados al componente
+            */}
+
+            <ProductCardCompound 
+              product={ product }
+              className="bg-dark color-bg-dark"
+            >
+              <ProductImage className="custom-image" customStyles={{ boxShadow: '10px 10px 10px rgba(0,0,0,0.2)'}}/>      
+              <ProductTitle  className="fz-bg-dark"/>
+              <ProductButtons className="custom-button-bg-dark" />              
+            </ProductCardCompound>
+
+             {/* 
+              Agregando estilos personalizados al componente
+            */}
+
+            <ProductCardCompound 
+              product={ product }
+              customStyles={{ backgroundColor: '#70D1F8', color: 'black' }}
+            >
+              <ProductImage customStyles={{ boxShadow: '10px 10px 10px rgba(0,0,0,0.2)'}}/>      
+              <ProductTitle  />
+              <ProductButtons customStyles={{ borderColor: 'black', color: 'black' }} />              
+            </ProductCardCompound>
+
         </div>
     </div>
   )

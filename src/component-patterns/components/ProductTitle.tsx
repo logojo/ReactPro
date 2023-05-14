@@ -2,9 +2,20 @@ import { useContext } from "react";
 import { productContext } from "./ProductCardCompound";
 import styles from '../assets/styles/styles.module.css';
 
-export const ProductTitle = ({ title } : { title? : string} ) => {
+interface Props {
+  title?     : string; 
+  className? : string
+  customStyles? : React.CSSProperties | undefined;
+}
+
+export const ProductTitle = ({ title, className, customStyles } : Props ) => {
     const { product } = useContext(productContext);
     return (
-      <span className={ styles.productDescription}>{ title ? title : product.title }</span>  
+      <span 
+        className={ `${ styles.productDescription } ${ className }` }
+        style={ customStyles }
+      >
+          { title ? title : product?.title }
+      </span>  
     )
   }
