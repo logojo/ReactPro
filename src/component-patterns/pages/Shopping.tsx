@@ -1,8 +1,6 @@
 import { ProductCardCompound, ProductImage, ProductTitle, ProductButtons } from '../components';
 import '../assets/styles/custom-styles.css';
 
-
-
 const product = {
  id: '1',
  title: 'American coffee',
@@ -34,6 +32,8 @@ export const Shopping = () => {
               <ProductCardCompound.Title title={'Titulo enviado'} className="fz-bg-dark"/>
               <ProductCardCompound.Buttons className="custom-button-bg-dark"/>              
             </ProductCardCompound>
+            
+
 
              {/* 
               Agregando clases personalizados al componente
@@ -60,6 +60,7 @@ export const Shopping = () => {
               <ProductTitle  />
               <ProductButtons customStyles={{ borderColor: 'black', color: 'black' }} />              
             </ProductCardCompound>
+
         </div>
     </div>
   )

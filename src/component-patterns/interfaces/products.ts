@@ -25,3 +25,8 @@ export interface ProductCardProps {
   Image:   (Props : Component) => JSX.Element; 
   Buttons: ( Props: { className? : string}) => JSX.Element; // para agregar las props a la interfas se puede hacer así o de la forma que esta arriba con el title e Imagen
 }
+
+export interface ProductCard {
+  product: Product; 
+  count: number;
+}
