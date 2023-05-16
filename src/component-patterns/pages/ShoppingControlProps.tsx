@@ -1,28 +1,13 @@
 import { ProductCardCompound, ProductImage, ProductTitle, ProductButtons } from '../components';
-import { Cart } from '../components/Cart';
+import { products } from '../data/data';
 import { useShoopingCart } from '../hooks/useShoopingCart';
-import { Product } from '../interfaces/products';
 
-const product = {
-    id: '1',
-    title: 'American coffee',
-    img: './coffee-mug.png'
-}
-
-const product2 = {
-    id: '2',
-    title: 'Coffe Mug meme',
-    img: './coffee-mug2.png'
-}
-
-
-const products: Product[] = [product, product2]
 
 export const ShoppingControlProps = () => {
   const { shoppingCart, onProductCountChange } = useShoopingCart()
   return (
    <>
-    <h1>Shopping Store</h1>
+    <h1>ShoppingControlProps</h1>
         <hr />
         
         <div style={{ 

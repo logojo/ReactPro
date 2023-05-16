@@ -14,30 +14,38 @@ export const useShoopingCart = () => {
 
       const productInCart : ProductInCart = prev[product.id] || { ...product, count: 0 };
 
-      //Agregar Producto
-      if(  Math.max( productInCart.count + count, 0 ) > 0 ) {
-           productInCart.count += count;
-           return {
-             ...prev,
-             [product.id]: productInCart
-           }
-      }
+  
+          if( count === 0 ){
+             const { [product.id]: toDelete, ...rest } = prev;         
+             return rest
+          }
+          
+          return {
+            ...prev,
+            [ product.id ] : { ...product, count}
+          }
+
+
+          //Esta es otra manera en la que se puede controlar el estado del carrito
+          // en esta manera se maneja independiente si se manda la funcion
+          // si  no se manda la funcion el carrito cambia desde aqui si se manda
+          // se controla desde el hook useProducts
+
+      //     //Agregar Producto
+      // if(  Math.max( productInCart.count + count, 0 ) > 0 ) {
+      //       productInCart.count += count;
+      //       return {
+      //         ...prev,
+      //         [product.id]: productInCart
+      //       }
+      // }
       
 
-      //borrar Producto
-      const { [product.id]: toDelete, ...rest } = prev;         
-      return rest
+      // //borrar Producto
+      // const { [product.id]: toDelete, ...rest } = prev;         
+      // return rest
 
 
-        //   if( count === 0 ){
-        //      const { [product.id]: toDelete, ...rest } = prev;         
-        //      return rest
-        //   }
-          
-        //   return {
-        //     ...prev,
-        //     [ product.id ] : { ...product, count}
-        //   }
     })
     
   }
